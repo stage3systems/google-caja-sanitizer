@@ -6,7 +6,7 @@ Port of the google caja html sanitizer library.
 
 Require the library and go
 
-	var sanitize = require('html-css-sanitizer').sanitize;
+	var sanitize = require('google-caja').sanitize;
 	var result = sanitize('test<script>console.log("hi there");</script>');
 
 # More info

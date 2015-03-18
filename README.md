@@ -25,6 +25,8 @@ Require the library and go
 var sanitize = require('google-caja-sanitizer').sanitize;
 var result = sanitize('test<script>console.log("hi there");</script><div data-fruit="Apple">Apple</div>');
 
+// Output:
+// 'test<div data-fruit="Apple">Apple</div>'
 ```
 
 # Documentation Page

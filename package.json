@@ -1,23 +1,33 @@
 {
-  "name": "html-css-sanitizer",
-  "version": "0.0.1",
-  "description": "Node wrapper for caja sanitizer for html/css",
+  "name": "google-caja-sanitizer",
+  "version": "1.0.0",
+  "description": "Node wrapper for caja sanitizer for html/css including data-* attributes",
   "main": "sanitizer.js",
   "scripts": {
     "test": "tap ./test"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/CLowbrow/node-caja-sanitizer"
+    "url": "github.com/iyogeshjoshi/google-caja-sanitizer"
   },
   "keywords": [
     "html",
     "css",
-    "sanitizer"
+    "sanitizer",
+    "google caja",
+    "caja"
   ],
-  "author": "Alex Zelenskiy",
+  "author": "Yogesh Joshi <iyogeshjoshi@gmail.com>",
   "license": "Apache 2.0",
   "devDependencies": {
     "tap": "~0.4.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/iyogeshjoshi/google-caja-sanitizer/issues"
+  },
+  "homepage": "https://github.com/iyogeshjoshi/google-caja-sanitizer",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
 }

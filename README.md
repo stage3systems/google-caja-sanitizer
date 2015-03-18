@@ -6,6 +6,9 @@ forked from [node-google-caja](https://github.com/superkhau/node-google-caja)
 
 modified to allow data-* attributes while sanitizing the html input.
 
+## Build Status
+[![Build Status](https://travis-ci.org/iyogeshjoshi/google-caja-sanitizer.svg?branch=master)](https://travis-ci.org/iyogeshjoshi/google-caja-sanitizer)
+
 ## Install
 You can install using the following command
 

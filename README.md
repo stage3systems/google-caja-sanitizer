@@ -12,7 +12,7 @@ modified to allow data-* attributes while sanitizing the html input.
 ## Install
 You can install using the following command
 
-```
+```shell
 #!shell
 <root-directory>$ npm i --save google-caja-sanitizer
 
@@ -22,7 +22,7 @@ You can install using the following command
 
 Require the library and go
 
-```
+```javascript
 #!nodejs
 
 var sanitize = require('google-caja-sanitizer').sanitize;

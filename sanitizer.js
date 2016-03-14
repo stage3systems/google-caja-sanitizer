@@ -1881,7 +1881,7 @@ var sanitizeMediaQuery = undefined;
       ':)?'
   );
 
-  var ALLOWED_URI_SCHEMES = /^(?:https?|mailto)$/i;
+  var ALLOWED_URI_SCHEMES = /^(?:https?|mailto|cid)$/i;
 
   function resolveUri(baseUri, uri) {
     if (baseUri) {
@@ -4633,7 +4633,7 @@ var html = (function(html4) {
     });
   }
 
-  var ALLOWED_URI_SCHEMES = /^(?:https?|mailto)$/i;
+  var ALLOWED_URI_SCHEMES = /^(?:https?|mailto|cid)$/i;
 
   function safeUri(uri, effect, ltype, hints, naiveUriRewriter) {
     if (!naiveUriRewriter) { return null; }

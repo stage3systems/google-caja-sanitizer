@@ -1,6 +1,6 @@
 {
   "name": "google-caja-sanitizer",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Node wrapper for caja sanitizer for html/css including data-* attributes",
   "main": "sanitizer.js",
   "scripts": {

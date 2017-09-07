@@ -972,7 +972,7 @@ var decodeCss;
   var BOM = '\\uFEFF';
 
   var CSS_TOKEN = new RegExp([
-      BOM, UNICODE_RANGE, URI, FUNCTION, WORD_TERM, STRING, NUMERIC_VALUE,
+      BOM, UNICODE_RANGE, URI, WORD_TERM, FUNCTION, STRING, NUMERIC_VALUE,
       CDO, CDC, S, COMMENT, CMP_OPS, CHAR].join("|"), 'gi');
 
   var CSS_DECODER = new RegExp('\\\\(?:' + ESCAPE_TAIL + '|' + NL + ')', 'g');

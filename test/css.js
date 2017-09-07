@@ -45,3 +45,10 @@ test('inline styles are ok', function (t) {
   t.equal(result, string);
   t.end();
 });
+// This test should time out if there's a regression in the regex that will cause catastrophic backtracking when evaluating a doubly escaped string
+test('Should sanitize doubly escaped nonsense values', function(t) {
+    var string = '<span style="font-size: 10.5pt ; font-family: \\00E5\\00BE\\00AE\\00E8\\00BB\\0178\\00E6\\00AD\\00A3\\00E9\\00BB\\2018\\00E9\\00AB\\201D ; color: black"></span>';
+    var result = sanitize(string);
+    t.equal(result, '<span style="font-size: 10.5pt ; color: black"></span>');
+    t.end();
+});

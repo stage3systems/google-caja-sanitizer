@@ -920,6 +920,10 @@ var decodeCss;
   // ident  ::=  '-'? nmstart nmchar*
   var IDENT = '-?' + NMSTART + NMCHAR + '*';
 
+  //Positive lookahead for functions in order to safeguard against catastrophic backtracking
+  //When an opening brace is not present
+  var FUNCTION_IDENT = '-?(?=(' + NMSTART + NMCHAR + '+))\\1';
+
   // ATKEYWORD  ::=  '@' ident
   var ATKEYWORD = '@' + IDENT;
   // HASH  ::=  '#' name
@@ -951,7 +955,8 @@ var decodeCss;
   // FUNCTION  ::=  ident '('
   // Diff: We exclude url explicitly.
   // TODO: should we be tolerant of "fn ("?
-  var FUNCTION = '(?!url[(])' + IDENT + '[(]';
+  var FUNCTION = '(?!url[(])' + FUNCTION_IDENT + '[(]';
+
   // INCLUDES  ::=  "~="
   var INCLUDES = '~=';
   // DASHMATCH  ::=  "|="
@@ -972,7 +977,7 @@ var decodeCss;
   var BOM = '\\uFEFF';
 
   var CSS_TOKEN = new RegExp([
-      BOM, UNICODE_RANGE, URI, WORD_TERM, FUNCTION, STRING, NUMERIC_VALUE,
+      BOM, UNICODE_RANGE, URI, FUNCTION, WORD_TERM, STRING, NUMERIC_VALUE,
       CDO, CDC, S, COMMENT, CMP_OPS, CHAR].join("|"), 'gi');
 
   var CSS_DECODER = new RegExp('\\\\(?:' + ESCAPE_TAIL + '|' + NL + ')', 'g');
@@ -996,6 +1001,7 @@ var decodeCss;
     cssText = '' + cssText;
     var tokens = cssText.replace(/\r\n?/g, '\n')  // Normalize CRLF & CR to LF.
         .match(CSS_TOKEN) || [];
+
     var j = 0;
     var last = ' ';
     for (var i = 0, n = tokens.length; i < n; ++i) {

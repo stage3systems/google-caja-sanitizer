@@ -52,3 +52,10 @@ test('Should sanitize doubly escaped nonsense values', function(t) {
     t.equal(result, '<span style="font-size: 10.5pt ; color: black"></span>');
     t.end();
 });
+
+test('Should keep valid function in styles', function(t) {
+   var string = '<span style="background-color: rgb(0 , 12 , 12)"></span>';
+   var result = sanitize(string);
+    t.equal(result, string);
+    t.end();
+});
